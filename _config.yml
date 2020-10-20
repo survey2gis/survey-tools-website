@@ -30,6 +30,7 @@ github_username:  survey2gis
 groups_io:  survey2gis
 
 header_pages:
+  - introduction.md
   - imprint.md
 
 # Build settings
