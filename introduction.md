@@ -26,7 +26,7 @@ permalink: /introduction/
 
 # Application
 
-As input data survey2gis expects one or more text files. The input data can consist of measured points (or coordinates) and descriptive data. In any case, however, one point measurement per line must be present, i.e. each line of the input file must contain at least exactly one X and one Y coordinate.
+As input data survey2gis expects one or more text files. The input data can consist of measured points (or coordinates) and descriptive data. In any case, one point measurement per line must be present, i.e. each line of the input file must contain at least exactly one X and one Y coordinate.
 
 <img class="intro__image" src="/assets/intro-images/select-file.jpg">
 <img class="intro__image" src="/assets/intro-images/additional-options.jpg">
@@ -61,7 +61,7 @@ To enable further processing with different applications, survey2gis will suppor
 
 <img class="intro__image" src="/assets/intro-images/select-output.jpg">
 
-# Language setting
+# Language settings
 
 survey2gis is an internationalized software whose reports can be completely translated into different languages.
 When the program is started, survey2gis checks the current language settings of the operating system and displays correspondingly translated screen texts.
