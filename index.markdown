@@ -11,11 +11,10 @@ The open source software survey2gis is a flexible tool for the conversion of sur
 
 The following persons and companies are currently involved in the development:
 - David Bibby, LAD-BW, Esslingen (DE)
+- Claus Brenner LAD-BW, Esslingen (DE)
 - Dr. Benjamin Ducke, Berlin (DE)
-- Bruno Caduff, Chur (CH)
 - CSGIS Gbr, Munich (DE)
 - Geomati.co, Rome (IT)
-- ArchIV, Munich (DE)
 
 Survey2gis processes field survey data based on point measurements into fully attributed, topologically cleaned, complex geometries (points, lines polygons), using information from freely definable codes in the survey data. Survey2gis acts as a bridge from field survey to GIS-based analysis.
 
