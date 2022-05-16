@@ -34,6 +34,6 @@ In the development of survey2gis, great emphasis has been placed on flexibility 
 
 - Open source software, published under GNU GPL 3.0.
 - Portable software: no installation required.
-- Runs on Windows XP/Vista/7/8 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
-- Can be controled trough a graphical user interface or via the command line.
+- Runs on Windows XP/Vista/7/8/10/11 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
+- Can be controlled trough a graphical user interface or via the command line.
 - Input/output of 2D or 3D survey data.    
