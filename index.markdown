@@ -12,11 +12,10 @@ The open source software survey2gis is a flexible tool for the conversion of sur
 The following persons and companies are currently involved in the development:
 - Jonas Abele, LAD-BW, Stuttgart (DE)
 - David Bibby, LAD-BW, Esslingen (DE)
+- Claus Brenner LAD-BW, Esslingen (DE)
 - Dr. Benjamin Ducke, Berlin (DE)
-- Bruno Caduff, Chur (CH)
-- CSGIS Gbr, Munich (DE)
+- CSGIS GbR, Munich (DE)
 - Geomati.co, Rome (IT)
-- ArchIV, Munich (DE)
 
 Survey2gis processes field survey data based on point measurements into fully attributed, topologically cleaned, complex geometries (points, lines polygons), using information from freely definable codes in the survey data. Survey2gis acts as a bridge from field survey to GIS-based analysis.
 
@@ -40,6 +39,7 @@ Survey2GIS is currently being further developed as part of NFDI4Objects[link=”
 
 - Open source software, published under GNU GPL 3.0.
 - Portable software: no installation required.
-- Runs on Windows XP/Vista/7/8 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
-- Can be controled through a graphical user interface or via the command line.
+- Runs on Windows XP/Vista/7/8/10/11 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
+- Can be controlled through a graphical user interface or via the command line.
 - Input/output of 2D or 3D survey data.    
+

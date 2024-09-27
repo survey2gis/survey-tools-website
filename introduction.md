@@ -20,8 +20,8 @@ permalink: /introduction/
 
 - Open source software, published under GNU GPL 3.0.
 - Portable software: no installation required.
-- Runs on Windows XP/Vista/7/8 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
-- Can be controled trough a graphical user interface or via the command line.
+- Runs on Windows XP/Vista/7/8/10/11 (32 and 64 Bit), Linux (32 and 64 Bit), Mac OS (planned).
+- Can be controlled through a graphical user interface or via the command line.
 - Input/output of 2D or 3D survey data.    
 
 # Application
@@ -51,13 +51,10 @@ Although it is not a standard certified by an independent committee, it has the 
 
 # Output Formats
 
-To enable further processing with different applications, survey2gis will support a number of output formats (so far only the output format "ESRI Shapefile" is implemented):
-
 - ESRI Shapefile
 - Drawing Exchange Format (DXF)
-- MapInfo ASCII (MIF/MID)
-- Scalable Vector Graphics (SVG)
-- Visualization Toolkit (VTK)
+- GeoJSON
+- Keyhole Markup Language (KML)
 
 <img class="intro__image" src="/assets/intro-images/select-output.jpg">
 
