@@ -23,7 +23,7 @@ In the development of survey2gis, great emphasis has been placed on flexibility 
 
 # News
 
-Survey2GIS is currently being further developed as part of NFDI4Objects[link=” https://www.nfdi4objects.net/”], with a particular focus on usability and integration into GIS-centered workflows. For this purpose, a QGIS plugin is being developed, and a first proto-type as well as a proof of concept (PoC) will be available here soon.
+Survey2GIS is currently being further developed as part of <a href="https://www.nfdi4objects.net/">NFDI4Objects</a>, with a particular focus on usability and integration into GIS-centered workflows. For this purpose, a QGIS plugin is being developed, and a first proto-type as well as a proof of concept (PoC) will be available here soon.
 
 # Functionality and features
 
