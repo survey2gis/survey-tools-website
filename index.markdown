@@ -9,12 +9,13 @@ layout: home
 
 The open source software survey2gis is a flexible tool for the conversion of survey data into GIS geometries and attributes. Version 1.1 of survey2gis was exclusively financed by the Cultural Heritage Authority of the Federal State of Baden-Württemberg, Germany.
 
-The following persons and companies are involved in the development:
+The following persons are involved in the development:
 - Jonas Abele, LAD-BW, Stuttgart (DE)
 - David Bibby, LAD-BW, Esslingen (DE)
-- Claus Brenner LAD-BW, Esslingen (DE)
+- Claus Brenner, LAD-BW, Esslingen (DE)
 - Dr. Benjamin Ducke, Berlin (DE)
-- CSGIS GbR, Munich (DE)
+- José Canalejo, CSGIS GbR, Munich (DE)
+- Toni Schönbuchner, CSGIS GbR, Munich (DE)
   
 Survey2gis processes field survey data based on point measurements into fully attributed, topologically cleaned, complex geometries (points, lines polygons), using information from freely definable codes in the survey data. Survey2gis acts as a bridge from field survey to GIS-based analysis.
 
