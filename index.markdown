@@ -5,6 +5,10 @@
 layout: home
 ---
 
+# News
+
+Survey2GIS is currently being further developed as part of <a href="https://www.nfdi4objects.net/">NFDI4Objects</a>, with a particular focus on usability and integration into GIS-centered workflows. For this purpose, a QGIS plugin is being developed, and a first proto-type as well as a proof of concept (PoC) will be available here soon.
+
 # About
 
 The open source software survey2gis is a flexible tool for the conversion of survey data into GIS geometries and attributes. Version 1.1 of survey2gis was exclusively financed by the Cultural Heritage Authority of the Federal State of Baden-Württemberg, Germany.
@@ -20,10 +24,6 @@ The following persons are involved in the development:
 Survey2gis processes field survey data based on point measurements into fully attributed, topologically cleaned, complex geometries (points, lines polygons), using information from freely definable codes in the survey data. Survey2gis acts as a bridge from field survey to GIS-based analysis.
 
 In the development of survey2gis, great emphasis has been placed on flexibility of use, robustness and the quality of the output data. Users are not limited to any specific survey method, but are instead offered a wide variety of processing modes, allowing to adjust the output to the needs of specific workflows.
-
-# News
-
-Survey2GIS is currently being further developed as part of <a href="https://www.nfdi4objects.net/">NFDI4Objects</a>, with a particular focus on usability and integration into GIS-centered workflows. For this purpose, a QGIS plugin is being developed, and a first proto-type as well as a proof of concept (PoC) will be available here soon.
 
 # Functionality and features
 
