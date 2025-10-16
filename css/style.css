@@ -1,0 +1,30 @@
+    html { scroll-behavior: smooth; }
+    nav a.active { 
+      color: #4f46e5; 
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    svg path, svg rect, svg line, svg circle { stroke-linecap: round; stroke-linejoin: round; }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      margin-left: 16px;
+      border-left: 1px solid #e5e7eb;
+    }
+    .lang-switcher a {
+      padding: 4px 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6b7280;
+      transition: all 0.2s;
+    }
+    .lang-switcher a:hover {
+      color: #4f46e5;
+    }
+    .lang-switcher a.active-lang {
+      background: #4f46e5;
+      color: white;
+    }

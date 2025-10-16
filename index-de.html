@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-800">
+<nav class="fixed top-0 w-full bg-white border-b z-50">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+      <a href="#top" class="font-bold text-lg">Survey tools</a>
+      
+      <div class="hidden md:flex items-center">
+        <div class="flex space-x-6">
+          <a href="#top" class="nav-link">Home</a>
+          <a href="#news" class="nav-link">Neuigkeiten</a>
+          <a href="#docs" class="nav-link">Dokumentation</a>
+          <a href="#training" class="nav-link">Trainingsdaten</a>
+        </div>
+        
+        <div class="lang-switcher">
+          <a href="index-de.html" class="active-lang">DE</a>
+          <a href="index.html" class="">EN</a>
+        </div>
+      </div>
+      
+      <button id="mobileMenuBtn" class="md:hidden p-2" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#top" class="block nav-link" onclick="toggleMobileMenu()">Home</a>
+        <a href="#news" class="block nav-link" onclick="toggleMobileMenu()">Neuigkeiten</a>
+        <a href="#docs" class="block nav-link" onclick="toggleMobileMenu()">Dokumentation</a>
+        <a href="#training" class="block nav-link" onclick="toggleMobileMenu()">Trainingsdaten</a>
+        <div class="flex gap-4 pt-4 border-t">
+          <a href="index-de.html" class="text-sm font-medium px-3 py-1 bg-indigo-600 text-white">DE</a>
+          <a href="index.html" class="text-sm font-medium px-3 py-1 bg-gray-100">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<section id="top" class="relative pt-32 pb-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl font-extrabold mb-4">Survey tools</h1>
+        <p class="text-lg text-gray-700 mb-3">
+          Survey tools besteht aus mehreren aufeinander abgestimmten Komponenten: einem CLI/GUI zur Datenverarbeitung, einem QGIS-Plugin für die GIS-Integration, einem Parser Builder zur Definition von Eingabeschemata und einer umfassenden Dokumentation, die Benutzer durch jeden Schritt führt.
+        </p>
+        <p class="text-lg text-gray-700 mb-3">
+          Hierdurch können rohe Messdaten in GIS-fähige Geometrien (Punkte, Linien und Polygone) umgewandelt werden. 
+          Survey2GIS gewährleistet die topologische Korrektheit, lässt sich nahtlos in QGIS-Workflows einbinden und ermöglicht ein flexibles Management, 
+          das auf Ihre Vermessungsmethoden zugeschnitten ist.
+        </p>
+        <p>
+        <a href="https://www.nfdi4objects.net/" 
+          target="_blank"
+          class="bottom-4 right-6 text-md text-indigo-600 hover:text-indigo-900 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+          </svg>
+          <span>Teil von NFDI4Objects</span>
+        </a>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        <a href="https://github.com/survey2gis/survey-tools/releases" target="_blank" class="group border bg-white p-6 shadow-sm flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.8" stroke="#333" class="mb-4 w-16 h-16 group-hover:scale-105 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+          </svg>
+          <h3 class="font-semibold mb-2 text-center">survey2GIS CLI/GUI</h3>
+          <p class="text-sm text-center">Konvertiert Vermessungsdaten über CLI oder GUI in topologisch korrekte Geometrien.</p>
+        </a>
+
+        <a href="https://plugins.qgis.org/plugins/s2g_data_processor/" target="_blank" class="group border bg-white p-6 shadow-sm flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.8" stroke="#333" class="mb-4 w-16 h-16 group-hover:scale-105 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+          </svg>
+          <h3 class="font-semibold mb-2 text-center">survey2GIS QGIS Plugin</h3>
+          <p class="text-sm text-center">Ist die QGIS Implementierung von survey2GIS.</p>
+        </a>
+
+        <a href="https://parser-generator.survey-tools.org/" target="_blank" class="group border bg-white p-6 shadow-sm flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.8" stroke="#333" class="mb-4 w-16 h-16 group-hover:scale-105 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+          </svg>
+          <h3 class="font-semibold mb-2 text-center">survey2GIS Parser Builder</h3>
+          <p class="text-sm text-center">Generiert und teilt Parsing-Schemata für die Umwandlung Ihrer Daten mit survey2GIS</p>
+        </a>
+
+        <a href="#docs" class="group border bg-white p-6 shadow-sm flex flex-col items-center hover:shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.8" stroke="#333" class="mb-4 w-16 h-16 group-hover:scale-105 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+          </svg>
+          <h3 class="font-semibold mb-2 text-center">Dokumentation</h3>
+          <p class="text-sm text-center">Schritt-für-Schritt-Anleitungen für jeden Teil der Survey2GIS tools.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="py-20 bg-gray-50 border-t pt-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col items-center mb-12">
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="#333" class="w-20 h-20 mb-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+</svg>
+
+
+      <h2 class="text-3xl font-bold">Neues</h2>
+      <p class="text-gray-700 mt-2 text-center max-w-2xl">
+        Bleiben Sie über aktuelle Entwicklungen, Plugin-Veröffentlichungen und Benutzerbeiträge auf dem Laufenden.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="flex items-start gap-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#666" class="w-8 h-8 mt-2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+</svg>
+
+     
+ <div class="flex flex-col w-full p-4 bg-gray-100 border border-gray-200">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-sm font-semibold text-gray-900">Survey2GIS Team</span>
+            <span class="text-xs text-gray-500">10. Apr</span>
+          </div>
+          <p class="text-sm text-gray-900">
+            Das Survey2GIS QGIS Plugin wurde aktualisiert! 
+            Es unterstützt nun das automatische Laden eines Alias-Pfades.
+          </p>
+          <span class="text-xs text-gray-500 mt-1"><a href="https://plugins.qgis.org/plugins/s2g_data_processor/#plugin-versions">https://plugins.qgis.org/…/#plugin-versions</a></span>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#666" class="w-8 h-8 mt-2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+</svg>   
+<div class="flex flex-col w-full p-4 bg-gray-100 border border-gray-200">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-sm font-semibold text-gray-900">Survey2GIS Team</span>
+            <span class="text-xs text-gray-500">05. Apr</span>
+          </div>
+          <p class="text-sm text-gray-900">
+            Das Parser Repository ist jetzt live! Sie können Parser-Definitionen auf GitHub teilen und suchen, vollständig integriert mit dem Parser Builder Webdienst.
+          </p>
+          <span class="text-xs text-gray-500 mt-1"><a href="https://github.com/survey2gis/parser-repository">https://github.com/…/parser-repository</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-2 text-center">Survey2GIS CLI/GUI</h2>
+    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+      Kernfunktionen der Kommandozeilen-Schnittstelle und der grafischen Benutzeroberfläche zur Vermessungsdatenverarbeitung
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-gray-800">Kernfunktionen</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Verarbeitung von mehreren, frei definierbaren Vermessungsdaten/Koordinaten mit Attributcodes.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Erstellung von geometrischen Objekten in Form von Punkten, Linien und Polygonen.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Frei definierbare Felder für Attributdaten.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Ausgabe von Vermessungsdaten als topologisch korrekte Geometrien in standardmäßigen GIS-Datenformaten.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Detaillierte Validierung und Protokollierung von Daten und Prozessen, einschließlich topologischer Bereinigung.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-gray-800">Zusätzliche Funktionen</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Open-Source-Software, veröffentlicht unter GNU GPL 3.0.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Portable Software: keine Installation erforderlich.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Läuft auf Windows XP/Vista/7/8/10/11 (32 und 64 Bit), Linux (32 und 64 Bit), Mac OS (geplant).</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Kann über eine grafische Benutzeroberfläche oder die Kommandozeile gesteuert werden.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-2 text-gray-500">•</span>
+            <span>Ein-/Ausgabe von 2D- oder 3D-Vermessungsdaten.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="docs" class="py-20 border-t bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-start">
+    <div class="md:col-span-2">
+      <h2 class="text-3xl font-bold mb-4 mt-8">Dokumentation & Community-Hilfe</h2>
+<p class="text-gray-700 mb-6"> Um Ihnen den Einstieg und die effiziente Nutzung des Survey2GIS Ökosystems zu erleichtern, stellen wir umfassende Anleitungen und eine aktive Community-Plattform bereit. Hier finden Sie Schritt-für-Schritt-Anweisungen, die alle Werkzeuge abdecken – von der Installation bis zum fortgeschrittenen Daten-Parsing. </p> <p class="text-gray-700"> Die folgenden Abschnitte bieten direkten Zugang zu Handbüchern und Support-Kanälen für: </p>
+
+      <div class="space-y-6 mt-8">
+        <div class="flex items-start space-x-4 border-l-4 border-indigo-500 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#333" class="w-10 h-10 mt-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+          </svg>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Survey2GIS CLI/GUI</h3>
+            <p class="text-sm mb-2">
+              Erfahren Sie, wie Sie Survey2GIS installieren, konfigurieren und ausführen, Parser-Dateien verstehen und Beispiele für Punkt-, Linien- und Polygon-Daten erkunden.
+            </p>
+            <a href="https://s2g-docs.survey-tools.org" target="_blank" class="text-indigo-600 font-semibold hover:underline">
+              CLI/GUI Dokumentation lesen →
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4 border-l-4 border-indigo-500 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#333" class="w-10 h-10 mt-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z" />
+          </svg>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">QGIS Plugin</h3>
+            <p class="text-sm mb-2">
+              Schritt-für-Schritt-Anleitungen zur Installation des Plugins, Validierung von Daten, Generierung von Befehlen und Import der Ergebnisse in QGIS.
+            </p>
+            <a href="https://s2qgis-docs.survey-tools.org/" target="_blank" class="text-indigo-600 font-semibold hover:underline">
+              QGIS Plugin Dokumentation lesen →
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4 border-l-4 border-indigo-500 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#333" class="w-10 h-10 mt-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+          </svg>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">Der Benutzergruppe beitreten</h3>
+            <p class="text-sm mb-3">
+              Vernetzen Sie sich mit anderen Nutzern, tauschen Sie Workflows aus und erhalten Sie Unterstützung von den Entwicklern.
+            </p>
+
+            <a href="https://s2qgis-docs.survey-tools.org/" target="_blank" class="text-indigo-600 font-semibold hover:underline">
+              Benutzergruppe besuchen →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      <div class="bg-white border border-gray-300 p-6 shadow-sm">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900">survey2GIS neueste Version (Release)</h3>
+
+        <a href="https://github.com/survey2gis/survey-tools/releases" target="_blank"
+           class="text-indigo-600 hover:text-indigo-900 font-semibold hover:underline">
+                    Neueste Version herunterladen →
+        </a>
+      </div>
+
+      <div class="bg-white border border-gray-300 p-6 shadow-sm">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900">survey2GIS Handbuch als PDF</h3>
+        <a href="https://github.com/user-attachments/files/16010974/english.pdf" target="_blank"
+           class="text-indigo-600 hover:text-indigo-900 font-semibold hover:underline">
+          PDF auf Englisch herunterladen →
+        </a>
+      </div>
+
+      <div class="bg-white border border-gray-300 p-6 shadow-sm">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900">Fehler in survey2GIS gefunden?</h3>
+        <p class="text-sm text-gray-700 mb-3">
+          Eröffnen Sie ein neues Ticket unter GitHub Issues.
+        </p>
+        <a href="https://github.com/survey2gis/survey-tools/issues" target="_blank"
+           class="text-indigo-600 hover:text-indigo-900 font-semibold hover:underline">
+          Problem melden →
+        </a>
+      </div>
+
+      <div class="bg-white border border-gray-300 p-6 shadow-sm">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900">Zu survey2GIS beitragen</h3>
+        <p class="text-sm text-gray-700 mb-3">
+          Forken Sie unser Repository auf GitHub und erstellen Sie einen Pull-Request gegen den Master Branch.
+        </p>
+        <a href="https://github.com/survey2gis" target="_blank"
+           class="text-indigo-600 hover:text-indigo-900 font-semibold hover:underline">
+          Auf GitHub ansehen →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="training" class="py-32 bg-white border-t mb-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="flex justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="#333" class="w-48 h-48">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25" />
+        </svg>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Trainingsdaten</h2>
+        <p class="text-gray-700 mb-6">
+          Laden Sie Beispieldaten zur Vermessung herunter, um mit Survey2GIS zu beginnen. Dieser Trainingsdatensatz enthält 
+          Beispiel-Vermessungsdateien und Parser-Konfigurationen, die Ihnen helfen, den Workflow zu verstehen und 
+          die Werkzeuge zu testen.
+        </p>
+
+        
+        <a href="#" 
+           class="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 text-lg font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          Trainingsdaten herunterladen (ZIP)
+        </a>
+        
+        <p class="text-sm text-gray-500 mt-4">
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="bg-gray-900 text-gray-300 py-20 border-t">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold mb-3 text-white">Über Survey2GIS</h3>
+        <p class="text-sm mb-3">
+          Survey tools ist eine Open-Source-Initiative, die ursprünglich vom Landesamt für Denkmalpflege Baden-Württemberg (LAD-BW) finanziert wurde.
+        </p>
+        <p class="text-sm mb-3">
+          <strong>Entwicklungspartner:</strong><br>
+          Jonas Abele, David Bibby, Claus Brenner (LAD-BW, Stuttgart & Esslingen, DE)<br>
+          Benjamin Ducke (Berlin, DE)<br>
+          José Canalejo, Toni Schönbuchner (CSGIS GbR, München, DE)
+        </p>
+        <p class="text-sm mt-6">
+          <strong>Lizenz:</strong><br>
+          Alle Survey tools werden unter der GNU General Public License Version 3.0 (GPL-3.0) veröffentlicht.
+          Das bedeutet, dass Sie die Software frei nutzen, modifizieren und verbreiten dürfen.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-3 text-white">Rechtliches</h3>
+        <p class="text-sm mb-6">
+          <button onclick="openImprintModal()" class="underline hover:text-white">Impressum & Rechtliche Hinweise</button>
+        </p>
+        <h3 class="text-xl font-semibold mb-3 text-white">Support</h3>
+        <p class="text-sm">
+          Für technischen Support, Funktionsanfragen und Diskussionen besuchen Sie bitte unsere 
+          <a href="https://groups.io/g/survey2gis/topics" target="_blank" class="underline hover:text-white">
+            Benutzergruppe
+          </a> oder melden Sie Probleme in unserem 
+          <a href="https://github.com/survey2gis/survey-tools/issues" target="_blank" class="underline hover:text-white">
+            GitHub-Repository
+          </a>.
+        </p>
+      </div>
+    </div>
+    <div class="text-center text-xs mt-12 pt-8 border-t border-gray-800 text-gray-500">
+      © 2025 Survey2GIS Projekt
+    </div>
+  </footer>
+
+  <div id="imprintModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-900">Impressum</h2>
+        <button onclick="closeImprintModal()" class="text-gray-500 hover:text-gray-700 text-3xl leading-none">&times;</button>
+      </div>
+      <div class="px-6 py-6 prose prose-gray max-w-none">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>
+          <strong>Land Baden-Württemberg</strong><br>
+          vertreten durch das Landesamt für Denkmalpflege im Regierungspräsidium Stuttgart<br>
+          Berliner Straße 12<br>
+          73728 Esslingen am Neckar<br>
+          Germany
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>
+          Landesamt für Denkmalpflege<br>
+          Berliner Straße 12<br>
+          73728 Esslingen (Neckar)<br>
+          Germany<br>
+          <br>
+          E-Mail: <a href="mailto:survey2gis@groups.io" class="text-indigo-600 hover:underline">survey2gis@groups.io</a>
+        </p>
+
+        <h3>Technische Umsetzung</h3>
+        <p>
+          CSGIS GbR<br>
+          Am Eichbüchl 7<br>
+          82223 Eichenau<br>
+          Germany
+        </p>
+
+        <h3>Haftung für Inhalte</h3>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+        </p>
+
+        <h3>Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+        </p>
+        <p>
+          Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+        </p>
+
+        <h3>Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+        </p>
+        <p>
+          Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+        </p>
+
+        <h3>Datenschutz</h3>
+        <p>
+          Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+        </p>
+        <p>
+          Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
